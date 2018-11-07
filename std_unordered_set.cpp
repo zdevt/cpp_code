@@ -2,13 +2,13 @@
 /*
  * =========================================================================
  *
- *       FileName:  main.c
+ *       FileName:  std_unordered_set.cpp
  *
  *    Description:
  *
  *        Version:  1.0
- *        Created:  2018-06-01 13:16:43
- *  Last Modified:  2018-10-26 15:03:02
+ *        Created:  2018-11-07 13:44:33
+ *  Last Modified:  2018-11-07 13:46:05
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -30,13 +30,33 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
+#include <iostream>
+#include <memory>
+#include <algorithm>
+#include <vector>
+#include <thread>
+#include <mutex>
+#include <map>
+#include <list>
+#include <string>
+#include <functional>
+
+#include <unordered_set>
+
 
 int main ( int argc, char* argv[] )
 {
   ( void ) argc;
   ( void ) argv;
 
-  test();
+  std::unordered_set<std::string> myset =
+  {"water", "sand", "ice", "foam"};
+
+  for ( auto& e : myset )
+  {
+    std::cout << e << std::endl;
+  }
+
 
   return 0;
 }

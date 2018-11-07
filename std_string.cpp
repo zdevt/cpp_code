@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  2017年03月02日 16时25分04秒
- *  Last Modified:  2017年03月02日 16时25分04秒
+ *  Last Modified:  2018-11-02 13:54:20
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -27,7 +27,19 @@
 
 int main ( int argc, char* argv[] )
 {
-  std::string str = "FILENAME ssss kkk ";
+  ( void ) argc;
+  ( void ) argv;
+
+  std::string str = "FILENAMEJKLMNOPQskkk";
+
+  std::size_t fd = str.find ( "Q" );
+  std::size_t rfd = str.rfind ( "Q" );
+
+  printf ( "fd=%ld rfd=%ld sz=%ld\n", fd, rfd, str.size() );
+  str.erase(fd); 
+  std::cout<<str<<std::endl;
+
+  #if 0
 
   //str.replace ( str.find ( "sssa" ), strlen ( "sssa" ), "kkk" );
   for ( auto iter = str.rbegin(); iter != str.rend(); ++iter )
@@ -40,7 +52,6 @@ int main ( int argc, char* argv[] )
 
   std::cout << std::endl;
 
-  #if 0
   std::ifstream file ( "a.txt", std::ios::in );
 
   if ( file )

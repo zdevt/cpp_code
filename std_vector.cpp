@@ -19,8 +19,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
+#include <iostream>
 
 typedef std::vector<char> vechar_t;
+
+std::vector<int> Test()
+{
+  return { 0, 1};
+}
 
 int main ( int argc, char* argv[] )
 {
@@ -45,8 +51,11 @@ int main ( int argc, char* argv[] )
   } );
 
 
-  for ( auto& e : c )
-    fprintf ( stderr, "%d ", e );
+  //for ( auto& e : c )
+    //fprintf ( stderr, "%d ", e );
+
+  for( auto& e : Test())
+    std::cout<<e<<std::endl;
 
   //vechar.clear();
 

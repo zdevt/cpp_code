@@ -136,6 +136,8 @@ void test()
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   pls1 = new UdpSocket ( 32345, "127.0.0.1", 32346 );
   pls2 = new UdpSocket ( 32346, "127.0.0.1", 32345 );
 
