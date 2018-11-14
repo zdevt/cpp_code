@@ -8,7 +8,7 @@
  *
  *        Version:  1.0
  *        Created:  2018-11-13 17:10:17
- *  Last Modified:  2018-11-14 09:14:29
+ *  Last Modified:  2018-11-14 09:24:38
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -48,9 +48,18 @@ string reverseWords ( string s )
   string ret;
   string space = " ";
 
+  if ( s.size() == 0 )
+    return s;
+
   size_t fd = s.find ( space );
   size_t old = 0;
   string temp;
+
+  if ( string::npos == fd )
+  {
+    reverse ( s.begin(), s.end() );
+    return s;
+  }
 
   s += space;
 
@@ -74,7 +83,7 @@ int main ( int argc, char* argv[] )
   ( void ) argc;
   ( void ) argv;
 
-  cout<<reverseWords ( "test check out git" )<<endl;
+  cout << reverseWords ( "test check out git" ) << endl;
 
   return 0;
 }
