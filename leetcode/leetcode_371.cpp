@@ -8,7 +8,7 @@
  *
  *        Version:  1.0
  *        Created:  2018-11-17 14:52:48
- *  Last Modified:  2018-11-17 14:52:54
+ *  Last Modified:  2018-11-17 15:14:56
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -43,11 +43,24 @@
 
 int getSum ( int a, int b )
 {
-
   if ( 0 == b )
     return a;
 
   return getSum ( a ^ b, ( a & b ) << 1 );
+}
+
+int getsum2 ( int a, int b )
+{
+  int c = a;
+
+  while ( b != 0 )
+  {
+    c = a ^ b;
+    b = ( a & b ) << 1;
+    c = a;
+  }
+
+  return c;
 }
 
 int main ( int argc, char* argv[] )
