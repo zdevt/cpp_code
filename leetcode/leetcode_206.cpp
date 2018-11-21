@@ -8,7 +8,7 @@
  *
  *        Version:  1.0
  *        Created:  2018-11-21 08:28:11
- *  Last Modified:  2018-11-21 08:28:47
+ *  Last Modified:  2018-11-21 08:41:20
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -50,28 +50,24 @@ struct ListNode
 
 ListNode* reverseList ( ListNode* head )
 {
-
   if ( !head )
-    return NULL;
+    return head;
 
-  ListNode* pt = NULL;
-  ListNode* p = NULL;
-  ListNode* pn = NULL;
+  ListNode* p = head;
+  ListNode* pn = p->next;
+  ListNode* pnn = NULL;
 
-  pt = head;
-  p = head->next;
-  pt->next = NULL;
+  p->next = NULL;
 
-  while ( p )
+  while ( pn )
   {
-    pn = p->next;
-    p->next = pt;
-
-    pt = p;
+    pnn = pn->next;
+    pn->next = p;
     p = pn;
+    pn = pnn;
   }
 
-  return pt;
+  return p;
 }
 
 
