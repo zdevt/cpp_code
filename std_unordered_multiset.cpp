@@ -2,13 +2,13 @@
 /*
  * =========================================================================
  *
- *       FileName:  std_unordered_set.cpp
+ *       FileName:  std_unordered_multiset.cpp
  *
  *    Description:
  *
  *        Version:  1.0
- *        Created:  2018-11-07 13:44:33
- *  Last Modified:  2018-11-21 13:46:11
+ *        Created:  2018-11-21 13:46:27
+ *  Last Modified:  2018-11-21 13:49:37
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -43,21 +43,20 @@
 
 #include <unordered_set>
 
+using namespace std;
+
 int main ( int argc, char* argv[] )
 {
   ( void ) argc;
   ( void ) argv;
 
-  std::unordered_set<std::string> myset =
-  {"water", "sand", "ice", "foam"};
+  unordered_multiset<string> a = {"apple", "beaf", "egg"};
+  unordered_multiset<string> b = {"beer", "apple", "beaf", "egg"};
 
-  std::unordered_set<std::string> myset2 =
-  {"water", "apple", "orange", "beaf"};
+  b.insert ( a.begin(), a.end() );
 
-  myset2.insert ( myset.begin(), myset.end() );
-
-  for ( auto& e : myset2 )
-    std::cout << e << std::endl;
+  for ( auto& e : b )
+    cout << e << endl;
 
   return 0;
 }
