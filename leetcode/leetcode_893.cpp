@@ -8,7 +8,7 @@
  *
  *        Version:  1.0
  *        Created:  2018-11-22 15:26:29
- *  Last Modified:  2018-11-22 15:26:54
+ *  Last Modified:  2018-11-22 15:29:13
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -46,11 +46,11 @@ using namespace std;
 
 int numSpecialEquivGroups ( vector<string>& A )
 {
-  auto f = [] ( string a )
+  int len = A[0].size();
+  auto f = [&] ( string a )
   {
     string odd;
     string even;
-    int len = a.size();
 
     for ( int i = 0; i < len; ++i )
     {
