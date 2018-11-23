@@ -54,8 +54,13 @@ int main ( int argc, char* argv[] )
   //for ( auto& e : c )
     //fprintf ( stderr, "%d ", e );
 
-  for( auto& e : Test())
-    std::cout<<e<<std::endl;
+  //for( auto& e : Test())
+    //std::cout<<e<<std::endl;
+
+  std::vector< std::vector<int> > vv;
+  vv.resize(10);
+  for( auto& e: vv)
+    std::cout<<"size="<<e.size()<<std::endl;
 
   //vechar.clear();
 
