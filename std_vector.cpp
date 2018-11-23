@@ -25,7 +25,7 @@ typedef std::vector<char> vechar_t;
 
 std::vector<int> Test()
 {
-  return { 0, 1};
+  return { 0, 1, 3, 5, 7, 2,4,6,8 };
 }
 
 int main ( int argc, char* argv[] )
