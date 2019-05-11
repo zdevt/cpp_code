@@ -25,46 +25,19 @@
 
 using namespace std;
 
-template<typename T>
-void Test ( T a )
-{
-  fprintf ( stderr, "sizeof t=%d\n", sizeof ( T ) );
-}
-
 int main ( int argc, char* argv[] )
 {
-  string s = "21 0x10 0x40 0x5";
-  stringstream ss ( s );
-  cout << ss.str() << endl;
+  ( void ) argc;
+  ( void ) argv;
 
-  unsigned int a, b, c;
-  ss >> std::hex >> a >> b >> c;
+  uint8_t aa[42] = { 0x1, 0x2, 0x3, 0x5, 0x99};
 
-  cout << a << endl;
-  cout << b << endl;
-  cout << c << endl;
+  stringstream sa;
 
-  #if 0
-  string s = "ccca 1 22 333";
-  std::stringstream ss ( s );
-  string str;
+  for ( int i = 0; i < 42; ++i )
+    sa << std::hex << ( int ) aa[i] << " ";
 
-  ss >> str;
-  cout << str << endl;
-
-  ss >> str;
-  cout << str << endl;
-
-  ss >> str;
-  cout << str << endl;
-
-  ss >> str;
-  cout << str << endl;
-
-  unsigned i;
-  sscanf ( "0x11122", "%x", &i );
-  fprintf ( stderr, "%x\n", i );
-  #endif
+  cout << sa.str() << endl;
 
   return 0;
 }
