@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -30,14 +31,19 @@ int main ( int argc, char* argv[] )
   ( void ) argc;
   ( void ) argv;
 
-  uint8_t aa[42] = { 0x1, 0x2, 0x3, 0x5, 0x99};
+  uint8_t temp[42] = { 0x1, 0x2, 0x3, 0x5, 0x99};
+  uint8_t pDmdHsg[42] = { 0x11, 0x2, 0x3, 0x5, 0x99};
 
-  stringstream sa;
+  stringstream sx, sd;
 
-  for ( int i = 0; i < 42; ++i )
-    sa << std::hex << ( int ) aa[i] << " ";
+  for ( int j = 0; j < 42; ++j )
+  {
+    sx << "0x" << std::hex << std::setw ( 2 ) << std::setfill ( '0' ) << ( int ) temp[j] << " ";
+    sd << "0x" << std::hex << std::setw ( 2 ) << std::setfill ( '0' ) << ( int ) pDmdHsg[j] << " ";
+  }
 
-  cout << sa.str() << endl;
+  cout << sx.str() << endl;
+  cout << sd.str() << endl;
 
   return 0;
 }
