@@ -32,8 +32,22 @@ int main ( int argc, char* argv[] )
   ( void ) argv;
 
   uint8_t temp[42] = { 0x1, 0x2, 0x3, 0x5, 0x99};
-  uint8_t pDmdHsg[42] = { 0x11, 0x2, 0x3, 0x5, 0x99};
+  uint8_t pDmdHsg[42] = { 0x11, 0x3, 0x3, 0x5, 0x99};
 
+  auto f = [&] ( uint8_t* p1, uint8_t* p2, int num )
+  {
+    for ( int i = 1; i < num; i += 2 )
+      if ( p1[i] != p2[i] )
+        return false;
+
+    return true;
+  };
+
+
+  cout << f ( temp, pDmdHsg, 42 ) << endl;
+
+
+  #if 0
   stringstream sx, sd;
 
   for ( int j = 0; j < 42; ++j )
@@ -44,6 +58,7 @@ int main ( int argc, char* argv[] )
 
   cout << sx.str() << endl;
   cout << sd.str() << endl;
+  #endif
 
   return 0;
 }
