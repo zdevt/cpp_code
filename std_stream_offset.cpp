@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  2015年11月18日 15时53分46秒
- *  Last Modified:  2015年11月18日 15时53分46秒
+ *  Last Modified:  2019-09-03 09:52:11
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -26,6 +26,8 @@ char buffer[1024] = { 0 };
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   std::ifstream ifs ( "a.bin", std::ifstream::binary );
 
   ifs.seekg ( 0x10, ifs.beg );

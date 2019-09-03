@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  2015年09月16日 10时13分53秒
- *  Last Modified:  2015年09月16日 10时13分53秒
+ *  Last Modified:  2019-09-03 00:04:35
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -24,6 +24,8 @@
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   std::ofstream ofs ( "a.bin", std::ios::binary );
 
   if ( !ofs )

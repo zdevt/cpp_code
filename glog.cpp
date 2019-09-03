@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  09/29/2017 02:11:47 PM
- *  Last Modified:  09/29/2017 02:11:47 PM
+ *  Last Modified:  2019-09-03 00:21:58
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -23,6 +23,8 @@
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   google::InitGoogleLogging ( ( const char* ) argv[0] );
   google::SetLogDestination ( google::GLOG_INFO, "./a.log" );
 
@@ -30,8 +32,5 @@ int main ( int argc, char* argv[] )
 
   return 0;
 }
-
-
-
 
 
