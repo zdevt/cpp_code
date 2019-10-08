@@ -45,6 +45,8 @@ class A
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   std::shared_ptr<A> a = A::GetObj ( "fuck" );
 
   a =  A::GetObj ( "cao" );

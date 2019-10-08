@@ -31,8 +31,7 @@ void f1 ( int n )
 {
   for ( int i = 0; i < 5; ++i )
   {
-    fprintf ( std
-              std::this_thread::sleep_for ( std::chrono::milliseconds ( 10 ) );
+    fprintf ( std::this_thread::sleep_for ( std::chrono::milliseconds ( 10 ) );
   }
 }
 
@@ -48,6 +47,8 @@ void f2 ( int& n )
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   int n = 0;
 
   std::thread t1;
@@ -60,4 +61,3 @@ int main ( int argc, char* argv[] )
 
   return 0;
 }
-

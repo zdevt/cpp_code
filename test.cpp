@@ -26,6 +26,7 @@ void printbuff ( uint8_t* buf, int len )
 
 int udp_output_zt ( const char* buf, int len, ikcpcb* kcp, void* user )
 {
+  ( void ) kcp;
   UdpSocket* p = reinterpret_cast<UdpSocket*> ( user );
   p->Send ( reinterpret_cast<const uint8_t*> ( buf ), len );
   return 0;
