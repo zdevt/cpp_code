@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  09/22/2017 08:47:43 AM
- *  Last Modified:  09/22/2017 08:47:43 AM
+ *  Last Modified:  2020-12-26 14:57:19
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -26,6 +26,8 @@
 
 int main ( int argc, char* argv[] )
 {
+  ( void ) argc;
+  ( void ) argv;
   int fd = open ( "/dev/pts/0", O_RDWR );
 
   write ( fd, "test!!!", 6 );

@@ -7,7 +7,7 @@
  *
  *        Version:  1.0
  *        Created:  2017年02月23日 16时44分49秒
- *  Last Modified:  2018-11-12 16:50:27
+ *  Last Modified:  2020-03-07 14:41:13
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -52,14 +52,13 @@ int main ( int argc, char* argv[] )
     }
   }
 
-  for ( int i = 0; i < n ; ++i )
+  for ( int i = 0; i < n; ++i )
   {
     if ( Temp[i] )
       printf ( "%d ", i );
   }
 
   printf ( "\n" );
-
 
   #if 0
 
@@ -122,4 +121,3 @@ int main ( int argc, char* argv[] )
 
   return 0;
 }
-
